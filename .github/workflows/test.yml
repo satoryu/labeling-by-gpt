@@ -1,0 +1,11 @@
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  test:
+    name: test
+    steps:
+      - uses: satoryu/labeling-by-gpt@main
+        with:
+          openai-api-token: ${{ secrets.OPENAI_API_TOKEN }}
