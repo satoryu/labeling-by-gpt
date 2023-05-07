@@ -5,6 +5,8 @@ on:
 jobs:
   test:
     name: test
+    runs-on: ubuntu-latest
+
     steps:
       - uses: satoryu/labeling-by-gpt@main
         with:
