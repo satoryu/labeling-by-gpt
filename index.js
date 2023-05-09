@@ -3,6 +3,7 @@ import * as github from "@actions/github";
 import { Configuration, OpenAIApi } from "openai";
 
 try {
+  core.info('Action Started')
   const apiKey = core.getInput("openai-api-key");
   const githubToken = core.getInput("github-token");
 

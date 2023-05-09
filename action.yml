@@ -1,5 +1,6 @@
 name: 'Labeling by GPT'
 description: 'Puts labels to Issues'
+
 inputs:
   openai-api-key:  # id of input
     description: 'OpenAI API Key'
@@ -8,6 +9,7 @@ inputs:
     description: 'GITHUB_TOKEN'
     required: true
     default: ${{ github.token }}
+
 runs:
   using: 'node16'
   main: dist/index.js
