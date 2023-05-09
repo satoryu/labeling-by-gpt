@@ -10,4 +10,4 @@ jobs:
     steps:
       - uses: satoryu/labeling-by-gpt@main
         with:
-          openai-api-token: ${{ secrets.OPENAI_API_KEY }}
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
