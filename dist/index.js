@@ -16718,7 +16718,8 @@ try {
     labels = labels[1].trim().split(/,\s*/)
 
     await octokit.rest.issues.setLabels({
-      ..._actions_github__WEBPACK_IMPORTED_MODULE_1__.context.issue,
+      owner: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.issue.owner,
+      repo: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.issue.repo,
       issue_number: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.issue.number,
       labels
     })

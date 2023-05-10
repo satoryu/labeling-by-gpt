@@ -47,7 +47,8 @@ try {
     labels = labels[1].trim().split(/,\s*/)
 
     await octokit.rest.issues.setLabels({
-      ...github.context.issue,
+      owner: github.context.issue.owner,
+      repo: github.context.issue.repo,
       issue_number: github.context.issue.number,
       labels
     })
