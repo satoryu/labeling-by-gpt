@@ -16837,8 +16837,8 @@ const { Configuration, OpenAIApi } = __nccwpck_require__(9211);
 
     const octokit = github.getOctokit(githubToken);
 
-    core.info(JSON.stringify({...github.context.issue}))
     const issue = await octokit.rest.issues.get({ ...github.context.issue });
+    core.info(JSON.stringify({...issue}))
     const labels = await octokit.rest.issues.listLabelsForRepo({
       ...github.context.repo,
     });
