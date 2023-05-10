@@ -38,5 +38,5 @@ try {
 
   core.debug(`Completion: ${completion.data.choices[0].text}`)
 } catch (error) {
-  core.setFailed(error.message);
+  core.setFailed(`Error Message: ${error.message}`);
 }
