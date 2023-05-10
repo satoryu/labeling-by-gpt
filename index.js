@@ -48,7 +48,7 @@ try {
 
     await octokit.rest.issues.setLabels({
       ...github.context.issue,
-      issue_number: github.context.issue_number,
+      issue_number: github.context.number,
       labels
     })
   } else {
