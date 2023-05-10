@@ -10,6 +10,7 @@ const { Configuration, OpenAIApi } = require("openai");
     const octokit = github.getOctokit(githubToken);
 
     const issue = await octokit.rest.issues.get({ ...github.context.issue, issue_number: github.context.issue.number });
+    core.debug(JSON.stringify(issue.data))
     const labels = await octokit.rest.issues.listLabelsForRepo({
       ...github.context.repo,
     });
@@ -22,7 +23,7 @@ const { Configuration, OpenAIApi } = require("openai");
 
     Only use the following labels:
     \`\`\`
-    ${JSON.stringify(labels, null, 2)}
+    ${JSON.stringify(labels.data, null, 2)}
     \`\`\`
 
     ## ISSUE ##
