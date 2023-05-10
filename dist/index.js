@@ -16838,7 +16838,6 @@ const { Configuration, OpenAIApi } = __nccwpck_require__(9211);
     const octokit = github.getOctokit(githubToken);
 
     const issue = await octokit.rest.issues.get({ ...github.context.issue, issue_number: github.context.issue.number });
-    core.debug(JSON.stringify(issue.data))
     const labels = await octokit.rest.issues.listLabelsForRepo({
       ...github.context.repo,
     });
@@ -16855,8 +16854,8 @@ const { Configuration, OpenAIApi } = __nccwpck_require__(9211);
     \`\`\`
 
     ## ISSUE ##
-    SUBJECT: ${issue.title}
-    BODY: ${issue.body}
+    SUBJECT: ${issue.data.title}
+    BODY: ${issue.data.body}
   `;
     core.debug(`Prompt: ${prompt}`);
 
