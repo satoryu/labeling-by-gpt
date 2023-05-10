@@ -16830,9 +16830,6 @@ const core = __nccwpck_require__(2186);
 const github = __nccwpck_require__(5438);
 const { Configuration, OpenAIApi } = __nccwpck_require__(9211);
 
-// import * as core from "@actions/core";
-// import * as github from "@actions/github";
-// import { Configuration, OpenAIApi } from "openai";
 (async function () {
   try {
     core.info("Action Started");
@@ -16872,7 +16869,7 @@ const { Configuration, OpenAIApi } = __nccwpck_require__(9211);
 
     core.debug(`Completion: ${completion.data.choices[0].text}`);
   } catch (error) {
-    core.setFailed(`Error Message: ${error.message}`);
+    core.setFailed(`Error Message: ${error.stack}`);
   }
 })();
 
