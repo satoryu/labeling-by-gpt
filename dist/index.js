@@ -16832,11 +16832,12 @@ const { Configuration, OpenAIApi } = __nccwpck_require__(9211);
 
 (async function () {
   try {
-    core.info("Action Started");
     const apiKey = core.getInput("openai-api-key");
     const githubToken = core.getInput("github-token");
 
     const octokit = github.getOctokit(githubToken);
+
+    core.info({...github.context.issue});
     const issue = await octokit.rest.issues.get({ ...github.context.issue });
     const labels = await octokit.rest.issues.listLabelsForRepo({
       ...github.context.repo,
