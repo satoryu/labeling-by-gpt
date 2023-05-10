@@ -9,8 +9,7 @@ const { Configuration, OpenAIApi } = require("openai");
 
     const octokit = github.getOctokit(githubToken);
 
-    const issue = await octokit.rest.issues.get({ ...github.context.issue });
-    core.info(JSON.stringify({...issue}))
+    const issue = await octokit.rest.issues.get({ ...github.context.issue, issue_number: github.context.issue.number });
     const labels = await octokit.rest.issues.listLabelsForRepo({
       ...github.context.repo,
     });
