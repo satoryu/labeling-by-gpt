@@ -16719,7 +16719,7 @@ try {
 
     await octokit.rest.issues.setLabels({
       ..._actions_github__WEBPACK_IMPORTED_MODULE_1__.context.issue,
-      issue_number: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.number,
+      issue_number: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.issue.number,
       labels
     })
   } else {
