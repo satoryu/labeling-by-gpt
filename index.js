@@ -41,6 +41,6 @@ const { Configuration, OpenAIApi } = require("openai");
 
     core.debug(`Completion: ${completion.data.choices[0].text}`);
   } catch (error) {
-    core.setFailed(`Error Message: ${JSON.stringify(error.stack, null, 2)}`);
+    core.setFailed(`Error Message: ${error.stack}`);
   }
 })();
