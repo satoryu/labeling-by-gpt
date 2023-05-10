@@ -41,7 +41,7 @@ try {
     temperature: 0,
   });
 
-  const labels = /LABELS\: (.+)/g.exec(completion.data.choices[0].text)
+  let labels = /LABELS\: (.+)/g.exec(completion.data.choices[0].text)
 
   if (labels) {
     labels = labels[1].trim().split(/,\s*/)
