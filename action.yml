@@ -1,6 +1,10 @@
 name: 'Labeling by GPT'
 description: 'Puts labels to Issues'
 
+branding:
+  color: orange
+  icon: tag
+
 inputs:
   openai-api-key:  # id of input
     description: 'OpenAI API Key'
