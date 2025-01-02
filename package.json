@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "ncc build index.js"
   },
   "author": "",
   "license": "MIT",
@@ -13,6 +13,9 @@
     "@actions/core": "^1.10.0",
     "@actions/github": "^5.1.1",
     "@vercel/ncc": "^0.36.1",
-    "openai": "^3.2.1"
+    "openai": "^4.77"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.7"
   }
 }
