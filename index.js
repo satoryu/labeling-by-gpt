@@ -16,7 +16,7 @@ try {
     ...github.context.repo,
   });
 
-  const labels = proposeLabels(issue.data, availableLabels.data, { apiKey, logger: core } );
+  const labels = await proposeLabels(issue.data, availableLabels.data, { apiKey, logger: core } );
 
   if (labels.length > 0) {
     await octokit.rest.issues.setLabels({
