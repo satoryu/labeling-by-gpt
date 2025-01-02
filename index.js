@@ -26,6 +26,7 @@ try {
       labels
     })
   } else {
+    core.debug(labels)
     core.setFailed('Failed to propose labels')
   }
 } catch (error) {
