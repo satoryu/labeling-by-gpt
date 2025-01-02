@@ -32,6 +32,7 @@ export async function proposeLabels(issue, availableLabels, { apiKey = null, log
 
   let labels = /LABELS\: (.+)/g.exec(completion.choices[0].message.content)
   labels = labels[1].trim().split(/,\s*/)
+  logger.debug(labels)
 
   return labels
 }
