@@ -17,6 +17,7 @@ try {
   });
 
   const labels = await proposeLabels(issue.data, availableLabels.data, { apiKey, logger: core } );
+  core.debug(labels)
 
   if (labels.length > 0) {
     await octokit.rest.issues.setLabels({
@@ -26,7 +27,6 @@ try {
       labels
     })
   } else {
-    core.debug(labels)
     core.setFailed('Failed to propose labels')
   }
 } catch (error) {
