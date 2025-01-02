@@ -42330,6 +42330,7 @@ async function proposeLabels(issue, availableLabels, { apiKey = null, logger = c
 
   let labels = /LABELS\: (.+)/g.exec(completion.choices[0].message.content)
   labels = labels[1].trim().split(/,\s*/)
+  logger.debug(labels)
 
   return labels
 }
@@ -42362,7 +42363,8 @@ try {
     ..._actions_github__WEBPACK_IMPORTED_MODULE_1__.context.repo,
   });
 
-  const labels = (0,_ai_js__WEBPACK_IMPORTED_MODULE_2__/* .proposeLabels */ .d)(issue.data, availableLabels.data, { apiKey, logger: /*#__PURE__*/ (_actions_core__WEBPACK_IMPORTED_MODULE_0___namespace_cache || (_actions_core__WEBPACK_IMPORTED_MODULE_0___namespace_cache = __nccwpck_require__.t(_actions_core__WEBPACK_IMPORTED_MODULE_0__, 2))) } );
+  const labels = await (0,_ai_js__WEBPACK_IMPORTED_MODULE_2__/* .proposeLabels */ .d)(issue.data, availableLabels.data, { apiKey, logger: /*#__PURE__*/ (_actions_core__WEBPACK_IMPORTED_MODULE_0___namespace_cache || (_actions_core__WEBPACK_IMPORTED_MODULE_0___namespace_cache = __nccwpck_require__.t(_actions_core__WEBPACK_IMPORTED_MODULE_0__, 2))) } );
+  _actions_core__WEBPACK_IMPORTED_MODULE_0__.debug(labels)
 
   if (labels.length > 0) {
     await octokit.rest.issues.setLabels({
